@@ -50,16 +50,17 @@
             $("button").click(function () {
                 var input2 = $("input[type='text']").val();
                 $.getJSON("GetList", { input: input2 }, function (data) {
-                    alert(data);
-                    //                  var str = "<div class="row">";
-                    //                  str += "<div class='col-4'>;
-                    //                   for (var name in data[0]) {
-                    //                       str+=name+
-                })
+                    console.log(JSON.parse(data));
+                    var str="";
+                    for (var name in data[0]) {
+                        str += "<div class='col-4'>" + name + "</div>";
+                    }
+                    $("#display").html(str);
+                    
+                 })
+                    
             })
-        })
-
-
+         })
     </script>
 </head>
 <body>
@@ -69,9 +70,8 @@
             <button>搜尋</button>
         </div>
 
-        <div class="row">
-            <div class="col-4">.col-4</div>
-            <div class="col-8">.col-8</div>
+        <div id="display" class="row">
+
         </div>
     </div>
 </body>

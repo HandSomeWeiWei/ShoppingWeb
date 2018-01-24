@@ -21,7 +21,7 @@ namespace ShoppingWeb.Controllers
         {
             string search = Request["input"].ToString();
             //string Strcn = "Data Source=172.20.10.2;Initial Catalog=ShoppingMall;User ID=sa;Password=sa";
-            string Strcn =@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Wei\Desktop\新增資料夾 (3)\ShoppingWeb\ShoppingWeb\App_Data\Database1.mdf; Integrated Security = True";
+            string Strcn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\BON\source\repos\ShoppingWeb\ShoppingWeb\App_Data\Database1.mdf; Integrated Security = True";
             string sql = "select * from Product";
             DataTable dt = new DataTable();
 
