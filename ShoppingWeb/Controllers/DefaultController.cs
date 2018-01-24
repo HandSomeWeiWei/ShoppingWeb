@@ -19,6 +19,7 @@ namespace ShoppingWeb.Controllers
 
         public JsonResult GetList()
         {
+            string search = Request["input"].ToString();
             string Strcn = "Data Source=172.20.10.2;Initial Catalog=ShoppingMall;User ID=sa;Password=sa";
             string sql = "SELECT *  FROM[ShoppingMall].[dbo].[Product]";
             DataTable dt = new DataTable();
@@ -35,8 +36,10 @@ namespace ShoppingWeb.Controllers
                 }
             }
 
-            string result = JsonConvert.SerializeObject(dt);
+            
+            var r=dt.Rows.Cast<DataRow>().Where(z => z["Name"].ToString().IndexOf(search) >-1).CopyToDataTable();
 
+            string result = JsonConvert.SerializeObject(r);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
