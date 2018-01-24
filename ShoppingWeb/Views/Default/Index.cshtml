@@ -46,7 +46,17 @@
             margin-bottom: 2rem;
         }
     </style>
-    <script></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                var input = $("input[type='text']").val;
+                $.getJSON("GetList", input, function (data) {
+                    var str = "<div class="row">";
+                    str += <div class="col-4"></div>
+                })
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="container">
