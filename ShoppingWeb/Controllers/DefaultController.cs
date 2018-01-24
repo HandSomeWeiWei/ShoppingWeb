@@ -19,7 +19,7 @@ namespace ShoppingWeb.Controllers
 
         public JsonResult GetList()
         {
-            string Strcn = "Data Source=.;Initial Catalog=ShoppingMall;User ID=sa;Password=sa";
+            string Strcn = "Data Source=172.20.10.2;Initial Catalog=ShoppingMall;User ID=sa;Password=sa";
             string sql = "SELECT *  FROM[ShoppingMall].[dbo].[Product]";
             DataTable dt = new DataTable();
 
