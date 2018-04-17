@@ -46,9 +46,8 @@
         $(function () {
             $("button").click(function () {
                 var input2 = $("input[type='text']").val();
-                $.getJSON("GetList", { input: input2 }, function (data) {
-                    console.log(JSON.parse(data));
-                    var str="";
+                $.getJSON("GetList", { input: input2 },function (data) {
+                    var str;
                     for (var name in data[0]) {
                         str += "<div class='col-4'>" + name + "</div>";
                     }
